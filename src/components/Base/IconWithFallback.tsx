@@ -8,10 +8,10 @@ import {
 type Props = { icon: string; style?: React.CSSProperties };
 
 export default function IconWithFallback({ icon, style }: Props) {
-  if (iconExists(icon)) {
-    loadIcons([icon]);
-    return <Icon icon={icon} style={style} />;
-  }
+  // if (iconExists(icon)) {
+  //   loadIcons([icon]);
 
+  // }
+  return <Icon icon={icon} style={style} />;
   return <span style={{ color: 'red' }}>{icon}</span>;
 }

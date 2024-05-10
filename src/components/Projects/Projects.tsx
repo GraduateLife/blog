@@ -31,31 +31,36 @@ const defaultVelocity = 0.4;
 // const showProjects = projects.filter((i) => i.preview);
 const _projects = myself.projects;
 
-const Card = ({ project }: { project: Project }) => {
+const Card = ({
+  project: { name, previewImgUrl, sourceUrl },
+}: {
+  project: Project;
+}) => {
   return (
-    <>
-      <div className={styles.slide} key={project.name}>
-        <a href={project.previewUrl ?? project.sourceUrl} target="_blank">
-          {project.previewImgUrl ? (
-            <BaseImage
-              src={project.previewImgUrl}
-              alt={project.name}
-              className={styles.image}
-              loading="lazy"
-            />
-          ) : (
-            <PreviewMissing
-              style={{ width: '100%', height: '100%' }}
-            ></PreviewMissing>
-          )}
-
-          <div className={styles.slideBody}>
-            <h2 className={styles.title}>{project.name}</h2>
-            <p className={styles.website}>{project.sourceUrl}</p>
-          </div>
-        </a>
-      </div>
-    </>
+    <div className={styles.slide} key={name}>
+      <a
+        href={sourceUrl}
+        target="_blank"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}
+      >
+        <img
+          src={'/img/' + previewImgUrl}
+          alt={name}
+          className={styles.image}
+          style={{ height: '200px', width: 'auto' }}
+          // loading="lazy"
+        />
+        <div className={styles.slideBody}>
+          <h2 className={styles.title}>{name}</h2>
+          <p className={styles.website}>{removeHttp(sourceUrl)}</p>
+        </div>
+      </a>
+    </div>
   );
 };
 
@@ -131,12 +136,6 @@ export default function ProjectSection() {
     <section
       className={clsx(styles.projectContainer, 'container padding-vert--sm')}
     >
-      {/* <WithShowMore
-        href="https://www.baidu.com"
-        TitleComponent={
-          <SectionTitle icon="radix-icons:code" title="查看项目"></SectionTitle>
-        }
-      ></WithShowMore> */}
       <div
         style={{
           display: 'flex',

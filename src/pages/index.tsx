@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Hero from '../components/Hero/Hero';
 import ProjectSection from '../components/Projects/Projects';
 import IamGoodAtSection from '../components/IamGoodAt/IamGoodAt';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 // import BlogLayoutWrapper from '../theme/BlogLayout';
 

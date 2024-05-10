@@ -20,7 +20,11 @@ export default function WithShowMore({ TitleComponent, icon, href }: Props) {
     //     {TitleComponent}
     //   </h2>
     //   {href && (
-    <Link href={href} className={styles.moreButton}>
+    <Link
+      href={href}
+      className={styles.moreButton}
+      style={{ display: 'inline-flex', alignItems: 'center' }}
+    >
       <Translate id="homepage.showMore">查看更多</Translate>
       <IconWithFallback icon="pajamas:long-arrow"></IconWithFallback>
     </Link>

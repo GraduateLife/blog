@@ -4,20 +4,9 @@ import { useScrollPercentage } from '../hooks/useScrollPercentage';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HorizontalScrollBar from '../components/Base/HorizontalScrollBar';
 import { useEnvVar } from '../hooks/useEnvVar';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 export default function Root({ children }) {
-  const { percentage } = useScrollPercentage();
-  const [shouldShow, setShouldShow] = useState<'none' | 'block'>('none');
-
-  const index_url = useEnvVar('index_url');
-  useEffect(() => {
-    if (window.location.href !== index_url) {
-      setShouldShow('block');
-    } else {
-      setShouldShow('none');
-    }
-  }, [window.location.href]);
-
   return (
     <>
       {/* <div
@@ -30,12 +19,12 @@ export default function Root({ children }) {
           display: shouldShow,
         }}
       > */}
-      <HorizontalScrollBar
+      {/* <HorizontalScrollBar
         currentPercentage={percentage}
         style={{
           display: shouldShow,
         }}
-      ></HorizontalScrollBar>
+      ></HorizontalScrollBar> */}
       {/* </div> */}
       {children}
     </>

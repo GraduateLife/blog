@@ -17,9 +17,7 @@ jobs:
           npm install pnpm -g
           pnpm install
           pnpm run build
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: main
-          FOLDER: build
+          folder: build # The folder the action should deploy.

@@ -1,0 +1,22 @@
+/* 
+@link to test theme colour https://docusaurus.io/zh-CN/docs/styling-layout#styling-your-site-with-infima 
+*/
+
+:root {
+  --ifm-color-primary: #9314a3;
+  --ifm-color-primary-dark: #841293;
+  --ifm-color-primary-darker: #7d118b;
+  --ifm-color-primary-darkest: #670e72;
+  --ifm-color-primary-light: #a216b3;
+  --ifm-color-primary-lighter: #a917bb;
+  --ifm-color-primary-lightest: #bf1ad4;
+}
+[data-theme='dark'] {
+  --ifm-color-primary: #f0c9f8;
+  --ifm-color-primary-dark: #e5a1f3;
+  --ifm-color-primary-darker: #df8df0;
+  --ifm-color-primary-darkest: #cf52e9;
+  --ifm-color-primary-light: #fbf1fd;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+}

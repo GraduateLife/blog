@@ -17,5 +17,3 @@ export const BaseImage = ({ src, type = 'static', ...rest }: Props) => {
     />
   );
 };
-
-export default Image;

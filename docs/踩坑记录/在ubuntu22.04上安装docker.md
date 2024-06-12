@@ -35,5 +35,16 @@ docker run --name docker-nginx -p 80:80 nginx
 
 另外有些疑问:
 
-- 按照教程设置镜像拉取源以后速度好像没有提升,不知道是不是我搞错了
-- 下面评论区的 docker 下载脚本我也没有试过,以后可以试试看
+- 下面评论区的 docker 下载脚本我没有试过,以后可以试试看
+
+> 6/12/2024 补充
+> 使用阿里云镜像加速
+> 感谢这位大哥 [docker 设置国内镜像源](https://www.cnblogs.com/eddyz/p/17168828.html)
+
+去下面的网址>镜像工具>镜像加速器按照手册操作即可, 需要阿里云账号
+cr.console.aliyun.com
+
+```bash
+# 查看是否生效
+docker info | grep ali
+```
